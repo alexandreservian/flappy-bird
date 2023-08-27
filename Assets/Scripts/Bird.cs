@@ -37,4 +37,10 @@ public class Bird : MonoBehaviour
     void OnDisable() {
         input.Disable();
     }
+
+    void OnTriggerEnter2D(Collider2D collider) {
+        if(collider.gameObject.CompareTag("InsidePipe")) {
+            
+        }
+    }
 }
