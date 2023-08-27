@@ -12,7 +12,6 @@ public class Spawner : MonoBehaviour
         InvokeRepeating(nameof(Spawn), timeRepeat, timeRepeat);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
