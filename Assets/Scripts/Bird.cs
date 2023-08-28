@@ -17,7 +17,6 @@ public class Bird : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         var triggeredJump = input.PlayerActions.Jump.triggered;
@@ -41,6 +40,10 @@ public class Bird : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider) {
         if(collider.gameObject.CompareTag("InsidePipe")) {
             GameManager.instance.UpdateScore();
+        }
+
+        if(collider.gameObject.CompareTag("Obstacle")) {
+            GameManager.instance.GameOver();
         }
     }
 }
