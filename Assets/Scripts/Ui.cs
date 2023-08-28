@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Ui : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    TextMeshProUGUI textScore;
+    void Awake()
+    {
+        textScore = transform.Find("Score").GetComponent<TextMeshProUGUI>();
+    }
+
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void UpdateTextScore(float score) {
+        textScore.text = score.ToString();
     }
 }
